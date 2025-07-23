@@ -6,7 +6,7 @@ const { loadSession } = require("baileys");
 const io = require("socket.io-client");
 const { getandRequirePlugins } = require("./assets/database/plugins");
 
-global.__basedir = __dirname; // Set the base directory for the project
+global.__basedir = __dirname; // Set the base directory for the 
 
 const readAndRequireFiles = async (directory) => {
   try {
