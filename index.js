@@ -47,8 +47,8 @@ async function initialize() {
     const ws = io("https://socket.xasena.me/", { reconnection: true });
     ws.on("connect", () => console.log("Connected to server"));
     ws.on("disconnect", () => console.log("Disconnected from server"));
+    await connect();
     await web();
-    return await connect();
   } catch (error) {
     console.error("Initialization error:", error);
     return process.exit(1); // Exit with error status
