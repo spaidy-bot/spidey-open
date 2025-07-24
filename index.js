@@ -5,6 +5,7 @@ const connect = require("./lib/connection");
 const { loadSession } = require("baileys");
 const io = require("socket.io-client");
 const { getandRequirePlugins } = require("./assets/database/plugins");
+const web = require("./lib/server");
 
 global.__basedir = __dirname; // Set the base directory for the 
 
@@ -46,7 +47,8 @@ async function initialize() {
     const ws = io("https://socket.xasena.me/", { reconnection: true });
     ws.on("connect", () => console.log("Connected to server"));
     ws.on("disconnect", () => console.log("Disconnected from server"));
-    return await connect();
+    await connect();
+    await web();
   } catch (error) {
     console.error("Initialization error:", error);
     return process.exit(1); // Exit with error status
