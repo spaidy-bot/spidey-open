@@ -28,7 +28,7 @@ module.exports = {
   HEROKU: toBool(process.env.HEROKU) || false,
   BOT_NAME: process.env.BOT_NAME || "SPIDY-MD",
   AUTO_READ: toBool(process.env.AUTO_READ) || false,
-  AUTO_STATUS_READ: toBool(process.env.AUTO_STATUS_READ) || false,
+  AUTO_STATUS_READ: toBool(process.env.AUTO_STATUS_READ) || true,
   PROCESSNAME: process.env.PROCESSNAME || "SPIDY-MD",
   WORK_TYPE: process.env.WORK_TYPE || "private",
   SESSION_URL: process.env.SESSION_URL || "",
